@@ -9,4 +9,8 @@ from datetime import datetime
 def submit_product(request):
     #TODO: valied data
 
-    return render(request,'signup.html',{})
+    if('name' in request.GET):
+        #this_token = 123456
+        #this_user = User.objects.filter(token__token = this_token).get()
+        product.objects.create(product_name =  request.GET['name'], product_price = int(request.GET['price']))
+    return render(request,'product.html',{})

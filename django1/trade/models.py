@@ -9,7 +9,6 @@ class Token(models.Model):
 class product(models.Model):
     product_name  = models.CharField("name",max_length=25)
     product_price = models.IntegerField()
-    product_date  = models.DateTimeField(null = True)
     user          = models.ForeignKey(User,on_delete=models.CASCADE,null=True )
     def __str__(self):
         return '%s' %(self.product_name)
